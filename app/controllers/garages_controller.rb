@@ -1,7 +1,8 @@
 class GaragesController < ApplicationController
   before_action :find_garage, only: [:show, :edit, :update, :destroy]
 
-  def index    
+  def index  
+    @garage = Garage.all.order("created_at DESC")  
   end
 
   def show

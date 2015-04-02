@@ -1,1 +1,11 @@
 %h1 This is the index place holder text
+
+- @garage.each do |garage|
+  %h2= garage.title
+  %p
+    Created at
+    = time_ago_in_words(garage.created_at)
+    ago!
+
+
+= link_to "New Garage Sale", new_garage_path
