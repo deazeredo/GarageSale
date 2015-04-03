@@ -11,11 +11,11 @@ class GaragesController < ApplicationController
   end
 
   def new
-    @garage = Garage.new
+    @garage = current_user.garages.build
   end
 
   def create
-    @garage = Garage.new(garage_params)
+    @garage = current_user.garages.build(garage_params)
 
     if @garage.save
       redirect_to @garage
