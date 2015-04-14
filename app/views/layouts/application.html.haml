@@ -1,0 +1,26 @@
+!!!
+%html
+%head
+	%title Garage Sale
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true 
+	= csrf_meta_tags 
+%body
+	%header.main_header
+		#logo
+			%p Garage Sale
+		#buttons
+			= link_to "New Garage Sale", new_garage_path	
+	
+	.wrapper
+		%p.notice= notice
+		%p.alert= alert
+
+	.wrapper	
+	=yield
+
+
+
+
+
+
