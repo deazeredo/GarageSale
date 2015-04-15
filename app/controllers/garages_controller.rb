@@ -1,5 +1,6 @@
 class GaragesController < ApplicationController
   before_action :find_garage, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index  
     @garage = Garage.all.order("created_at DESC")  
@@ -7,7 +8,6 @@ class GaragesController < ApplicationController
 
   def show
     @garage = Garage.find(params[:id])
-    
   end
 
   def new
@@ -50,7 +50,7 @@ class GaragesController < ApplicationController
   end
 
   def garage_params
-    params.require(:garage).permit(:title, :description, :address, :date, :time )
-    
+    params.require(:garage).permit(:title, :description, :address, :date, :time )        
   end
+
 end
