@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :garages
-
+  resources :garages do 
+    get 'show_personal', on: :collection
+  end
   root 'garages#index'
 
 

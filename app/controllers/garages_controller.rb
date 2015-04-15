@@ -14,6 +14,10 @@ class GaragesController < ApplicationController
     @garage = current_user.garages.build
   end
 
+  def show_personal
+    @garage = current_user.garages.all    
+  end
+
   def create
     @garage = current_user.garages.build(garage_params)
 
