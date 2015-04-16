@@ -1,5 +1,6 @@
-= simple_form_for @garage do |f|
+= simple_form_for @garage, html: { multipart: true } do |f|
   = f.input :title
+  = f.file_field :image
   = f.input :description
   = f.input :address
   = f.input :date

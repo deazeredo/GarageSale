@@ -54,7 +54,7 @@ class GaragesController < ApplicationController
   end
 
   def garage_params
-    params.require(:garage).permit(:title, :description, :address, :date, :time )        
+    params.require(:garage).permit(:title, :description, :address, :date, :time, :image)        
   end
 
 end
